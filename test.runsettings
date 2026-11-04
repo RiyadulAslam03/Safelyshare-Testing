@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <BASE_URL>https://safelyshare.se/</BASE_URL>
+      <HEADED>0</HEADED>
+      <BROWSER>chromium</BROWSER>
+    </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>
