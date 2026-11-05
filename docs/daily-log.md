@@ -20,3 +20,13 @@
 8. Updated BaseTest.cs with viewport, BaseURL, locale and HTTPS error handling.
 9. Ran the test again using test.runsettings.
 10. Final result: 1 test passed, 0 failed. Build succeeded.
+	 
+	### Additional work – 2026-11-05
+
+11. Added automatic screenshots when a Playwright test fails.
+12. Tested the screenshot functionality and verified that the PNG file was created.
+13. Added Playwright tracing to help investigate failed tests.
+14. Updated BaseTest.cs to save screenshots and trace files when tests fail.
+15. Successfully built and ran the project after the changes.
+16. Final test result: 1 passed, 0 failed.
+17. Committed and pushed the latest changes to my GitHub feature branch.
