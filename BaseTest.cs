@@ -9,11 +9,16 @@ public class BaseTest : PageTest
 {
     protected static readonly TestSettings Settings = ConfigLoader.Load();
     [SetUp]
-    public void ConfigureTimeout()
+    public async Task ConfigureTimeout()
     {
-
         Page.SetDefaultTimeout(Settings.DefaultTimeoutMs);
 
+        await Context.Tracing.StartAsync(new TracingStartOptions
+        {
+            Screenshots = true,
+            Snapshots = true,
+            Sources = true
+        });
     }
     [TearDown]
     public async Task SaveScreenshotOnFailure()
@@ -32,10 +37,17 @@ public class BaseTest : PageTest
                 Path = screenshotPath,
                 FullPage = true
             });
+            TestContext.AddTestAttachment(Path.GetFullPath(screenshotPath));
 
-            TestContext.AddTestAttachment(
-                Path.GetFullPath(screenshotPath));
+
         }
+        await Context.Tracing.StopAsync(new TracingStopOptions
+        {
+            Path = TestContext.CurrentContext.Result.Outcome.Status ==
+        NUnit.Framework.Interfaces.TestStatus.Failed
+        ? Path.Combine("artifacts", $"{TestContext.CurrentContext.Test.ID}-trace.zip")
+        : null
+        });
     }
     public override BrowserNewContextOptions ContextOptions()
     {
