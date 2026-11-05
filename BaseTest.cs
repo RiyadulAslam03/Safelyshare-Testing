@@ -12,7 +12,7 @@ public class BaseTest : PageTest
     public async Task ConfigureTimeout()
     {
         Page.SetDefaultTimeout(Settings.DefaultTimeoutMs);
-
+        await Page.GotoAsync(Settings.BaseUrl);
         await Context.Tracing.StartAsync(new TracingStartOptions
         {
             Screenshots = true,
