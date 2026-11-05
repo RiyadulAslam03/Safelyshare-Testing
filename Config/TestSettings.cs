@@ -6,5 +6,5 @@ public class TestSettings
     public string BaseUrl { get; set; } = "https://safelyshare.se/";
     public string Browser { get; set; } = "chromium";
     public bool Headless { get; set; } = true;
-    public int Timeout { get; set; } = 30000;
+    public int DefaultTimeoutMs { get; set; } = 30000;
 }

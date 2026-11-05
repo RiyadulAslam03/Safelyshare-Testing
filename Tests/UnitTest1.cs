@@ -20,7 +20,8 @@ public class Tests : BaseTest
 
 
         await Expect(Page).ToHaveURLAsync(
-    new System.Text.RegularExpressions.Regex(@"^https://safelyshare\.se/?$"));
+      new System.Text.RegularExpressions.Regex(
+          "^" + System.Text.RegularExpressions.Regex.Escape(Settings.BaseUrl.TrimEnd('/')) + "/?$"));
         await Expect(Page).ToHaveTitleAsync("Something new is coming · SafelyShare");
 
 
@@ -31,7 +32,8 @@ public class Tests : BaseTest
         await Expect(homePage.EnglishLink).ToBeVisibleAsync();
         await Expect(homePage.SwedishLink).ToBeVisibleAsync();
         await Expect(homePage.VeyroTechLink).ToBeVisibleAsync();
-        
+        await Expect(homePage.Logo).ToBeVisibleAsync();
+
 
 
     }

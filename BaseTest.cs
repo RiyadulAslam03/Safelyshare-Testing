@@ -11,14 +11,18 @@ public class BaseTest : PageTest
     [SetUp]
     public void ConfigureTimeout()
     {
-        Page.SetDefaultTimeout(Settings.Timeout);
+
+        Page.SetDefaultTimeout(Settings.DefaultTimeoutMs);
+
     }
     public override BrowserNewContextOptions ContextOptions()
     {
         return new BrowserNewContextOptions
         {
             ViewportSize = ViewportSize.NoViewport,
-            BaseURL = Settings.BaseUrl
+            BaseURL = Settings.BaseUrl,
+            Locale = "en-US",
+            IgnoreHTTPSErrors = true
         };
     }
 }

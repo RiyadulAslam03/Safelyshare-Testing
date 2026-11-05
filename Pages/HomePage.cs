@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.Playwright;
 using System.Threading.Tasks;
+using SafelyShare.Tests.Config;
 
 namespace SafelyShare.Tests.Pages;
 
@@ -12,10 +13,11 @@ public class HomePage : BasePage
 
     public async Task OpenAsync()
     {
-        await NavigateAsync(
-     Environment.GetEnvironmentVariable("BASE_URL") ?? "https://safelyshare.se/");
+        var settings = ConfigLoader.Load();
+        await NavigateAsync(settings.BaseUrl);
         await WaitForLoadAsync();
     }
+
     public ILocator ComingSoonHeading =>
         GetHeading("Something new is coming");
 
@@ -34,4 +36,6 @@ public class HomePage : BasePage
     public ILocator VeyroTechLink =>
         Page.GetByRole(AriaRole.Link, new() { Name = "Veyro Tech" });
 
+    public ILocator Logo =>
+    Page.Locator("span.logo.holding__logo");
 }
