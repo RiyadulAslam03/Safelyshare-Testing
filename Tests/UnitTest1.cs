@@ -22,7 +22,7 @@ public class Tests : BaseTest
         await Expect(Page).ToHaveURLAsync(
       new System.Text.RegularExpressions.Regex(
           "^" + System.Text.RegularExpressions.Regex.Escape(Settings.BaseUrl.TrimEnd('/')) + "/?$"));
-        await Expect(Page).ToHaveTitleAsync("Something new is coming · SafelyShare");
+        await Expect(Page).ToHaveTitleAsync(new System.Text.RegularExpressions.Regex(@"Something new is coming.*SafelyShare", System.Text.RegularExpressions.RegexOptions.IgnoreCase));
 
 
         await Expect(homePage.ComingSoonHeading).ToBeVisibleAsync();

@@ -7,8 +7,9 @@ namespace SafelyShare.Tests.Config;
 
 public static class ConfigLoader
 {
-
-    public static TestSettings Load()
+    private static readonly Lazy<TestSettings> _settings = new(() => LoadSettings());
+    public static TestSettings Load() => _settings.Value;
+    private static TestSettings LoadSettings()
     {
         var configuration = new ConfigurationBuilder()
             .SetBasePath(AppContext.BaseDirectory)
@@ -22,14 +23,22 @@ public static class ConfigLoader
             ?? throw new InvalidOperationException(
                 "Could not load TestSettings.");
 
-        var overrideUrl = Environment.GetEnvironmentVariable("TEST_BASEURL");
 
-        if (!string.IsNullOrWhiteSpace(overrideUrl))
+
+        if (!Uri.TryCreate(settings.BaseUrl, UriKind.Absolute, out var url) ||
+            (url.Scheme != Uri.UriSchemeHttp && url.Scheme != Uri.UriSchemeHttps))
         {
-            settings.BaseUrl = overrideUrl;
+            throw new InvalidOperationException("BaseUrl must be a valid HTTP or HTTPS URL.");
+        }
+
+        if (settings.DefaultTimeoutMs <= 0)
+        {
+            throw new InvalidOperationException("DefaultTimeoutMs must be greater than zero.");
         }
 
         return settings;
+
+        
     }
 
 }

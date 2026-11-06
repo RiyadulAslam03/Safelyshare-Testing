@@ -1,7 +1,6 @@
 ﻿
 using Microsoft.Playwright;
 using System.Threading.Tasks;
-using SafelyShare.Tests.Config;
 
 namespace SafelyShare.Tests.Pages;
 
@@ -13,9 +12,7 @@ public class HomePage : BasePage
 
     public async Task OpenAsync()
     {
-        var settings = ConfigLoader.Load();
-        await NavigateAsync(settings.BaseUrl);
-        await WaitForLoadAsync();
+        await NavigateAsync("/");
     }
 
     public ILocator ComingSoonHeading =>

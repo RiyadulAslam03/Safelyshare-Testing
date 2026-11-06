@@ -2,7 +2,7 @@
 <RunSettings>
 	<RunConfiguration>
 		<EnvironmentVariables>
-			<TEST_BASEURL>https://safelyshare.se/</TEST_BASEURL>
+			<TestSettings__BaseUrl>https://safelyshare.se/</TestSettings__BaseUrl>
 		</EnvironmentVariables>
 	</RunConfiguration>
 	<Playwright>

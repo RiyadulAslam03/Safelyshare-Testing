@@ -1,10 +1,10 @@
 ﻿
 using Microsoft.Playwright;
-using System.Threading.Tasks;
+
 
 namespace SafelyShare.Tests.Pages;
 
-public class BasePage
+public abstract class BasePage
 {
     protected readonly IPage Page;
 
@@ -22,10 +22,7 @@ public class BasePage
     {
         return Page.GetByRole(
             AriaRole.Heading,
-            new() { Name = text });
+            new() { Name = text, Exact = true });
     }
-    public async Task WaitForLoadAsync()
-    {
-        await Page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
-    }
+    
 }
