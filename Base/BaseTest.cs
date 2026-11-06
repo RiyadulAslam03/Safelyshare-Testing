@@ -27,7 +27,7 @@ public class BaseTest : PageTest
     }
 
     [TearDown]
-    public async Task SaveFailureArtifactsAsync()
+    public async Task TearDownAsync()
     {
         bool failed = TestContext.CurrentContext.Result.Outcome.Status ==
                       NUnit.Framework.Interfaces.TestStatus.Failed;

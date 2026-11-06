@@ -34,5 +34,5 @@ public class HomePage : BasePage
         Page.GetByRole(AriaRole.Link, new() { Name = "Veyro Tech" });
 
     public ILocator Logo =>
-    Page.Locator("span.logo.holding__logo");
+    Page.GetByText("Safelyshare", new() { Exact = true });
 }

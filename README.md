@@ -1,13 +1,48 @@
+
 # Safelyshare-Testing
-Safelyshare automation testing
+
+Automated testing framework for SafelyShare using C#, .NET, NUnit and Playwright.
+
+## Prerequisites
+
+- .NET 8 SDK
+- PowerShell 7
+- Playwright browser installed
+
+## Install Playwright
+
+Run the following command after building the project:
+
+```powershell
+dotnet build
+pwsh bin/Debug/net8.0/playwright.ps1 install
+```
+
 ## Running Tests
 
-This project uses C#, .NET, NUnit and Playwright for automated testing.
+Run the automated tests using:
 
-To run the tests, use:
-
+```powershell
 dotnet test --settings test.runsettings
+```
 
-The tests validate the SafelyShare website using the configured base URL.
+## Configuration
 
-Test configuration is managed through appsettings.json and test.runsettings.
+The base URL is configured in `appsettings.json`.
+
+To override the base URL in PowerShell:
+
+```powershell
+$env:TestSettings__BaseUrl = "https://safelyshare.se/"
+dotnet test --settings test.runsettings
+```
+
+Browser selection is configured through `test.runsettings`.
+
+## Test Artifacts
+
+Screenshots and Playwright traces are saved in the test work directory under `artifacts/` when tests fail.
+
+## Test Coverage
+
+The homepage tests verify the page URL, title, main content, contact information and language links.

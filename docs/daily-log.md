@@ -8,7 +8,7 @@
 5. Learned more about Page Object Model and Git. Next, I will continue with the framework tasks.
 
 **Blockers:** Waiting for access to the team's GitHub repository.
-## Daily Log – 2026-11-05
+# Daily Log – 2026-11-05
 
 1. Updated the test configuration using appsettings.json.
 2. Configured ConfigLoader and TestSettings.
@@ -21,7 +21,7 @@
 9. Ran the test again using test.runsettings.
 10. Final result: 1 test passed, 0 failed. Build succeeded.
 	 
-	### Additional work – 2026-11-05
+## Additional work – 2026-11-05
 
 11. Added automatic screenshots when a Playwright test fails.
 12. Tested the screenshot functionality and verified that the PNG file was created.
