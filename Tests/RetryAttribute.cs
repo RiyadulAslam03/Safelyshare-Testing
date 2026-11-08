@@ -38,6 +38,8 @@ public sealed class RetryAttribute : NUnitAttribute, IWrapSetUpTearDown
             {
                 attempt++;
                 TestContext.Progress.WriteLine($"Retry attempt: {attempt}");
+                context.CurrentResult = innerCommand.Execute(context);
+
                 if (context.CurrentResult.ResultState.Status != TestStatus.Failed ||
                     attempt >= _maxAttempts)
                 {

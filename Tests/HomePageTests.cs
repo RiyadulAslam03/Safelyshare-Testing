@@ -48,5 +48,6 @@ public class HomePageTests : BaseTest
         await Expect(homePage.SwedishLink).ToBeVisibleAsync();
         await Expect(homePage.VeyroTechLink).ToBeVisibleAsync();
     }
+   
 }    
 
