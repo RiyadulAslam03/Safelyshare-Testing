@@ -4,6 +4,7 @@ using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
 using System.Threading.Tasks;
 using SafelyShare.Tests.Pages;
+using SafelyShare.Tests.Base;
 
 
 namespace SafelyShare.Tests;

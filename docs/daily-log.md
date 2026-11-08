@@ -30,3 +30,17 @@
 15. Successfully built and ran the project after the changes.
 16. Final test result: 1 passed, 0 failed.
 17. Committed and pushed the latest changes to my GitHub feature branch.
+ ## Environment verification – 2026-11-07
+
+- .NET SDK: 9.0.312
+- Git: 2.51.0.windows.1
+- PowerShell: 7.6.9
+- Development environment verified successfully.
+## Daily Log – 2026-11-08
+
+1. Added Serilog logging to the test automation framework.
+2. Configured automatic log files using Serilog.Sinks.File.
+3. Added logging for test start times and test results.
+4. Ran all three Playwright tests successfully.
+5. Verified that the log file contains test names and Passed results.
+6. Final result: 3 tests passed, 0 failed. Build succeeded.

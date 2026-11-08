@@ -2,8 +2,9 @@
 using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using SafelyShare.Tests.Config;
+using Serilog;
 
-namespace SafelyShare.Tests;
+namespace SafelyShare.Tests.Base;
 
 public class BaseTest : PageTest
 {
@@ -11,11 +12,17 @@ public class BaseTest : PageTest
     protected static readonly TestSettings Settings = ConfigLoader.Load();
 
     private bool _tracingStarted;
+    private static readonly Serilog.Core.Logger Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.File("logs/test-log.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+    
     [SetUp]
     public async Task SetUpAsync()
     {
         Page.SetDefaultTimeout(Settings.DefaultTimeoutMs);
-       
+        Logger.Information("Starting test: {TestName}", TestContext.CurrentContext.Test.Name);
+
         await Context.Tracing.StartAsync(new TracingStartOptions
         {
             Screenshots = true,
@@ -31,6 +38,9 @@ public class BaseTest : PageTest
     {
         bool failed = TestContext.CurrentContext.Result.Outcome.Status ==
                       NUnit.Framework.Interfaces.TestStatus.Failed;
+        Logger.Information("Finished test: {TestName}, Result: {Result}",
+            TestContext.CurrentContext.Test.Name,
+            TestContext.CurrentContext.Result.Outcome.Status);
 
         string artifactsDir = Path.Combine(
             TestContext.CurrentContext.WorkDirectory,
@@ -90,5 +100,11 @@ public class BaseTest : PageTest
             Locale = "en-US",
             IgnoreHTTPSErrors = false
         };
+    }
+
+    [OneTimeTearDown]
+    public void CloseLogger()
+    {
+        Logger.Dispose();
     }
 }
