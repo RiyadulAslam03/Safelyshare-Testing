@@ -8,7 +8,6 @@ namespace SafelyShare.Tests.Base;
 
 public class BaseTest : PageTest
 {
-
     protected static readonly TestSettings Settings = ConfigLoader.Load();
 
     private bool _tracingStarted;
@@ -103,7 +102,7 @@ public class BaseTest : PageTest
     }
 
     [OneTimeTearDown]
-    public void CloseLogger()
+    public static void CloseLogger()
     {
         Logger.Dispose();
     }

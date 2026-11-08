@@ -5,13 +5,15 @@ using NUnit.Framework;
 using System.Threading.Tasks;
 using SafelyShare.Tests.Pages;
 using SafelyShare.Tests.Base;
-
+[assembly: LevelOfParallelism(2)]
 
 namespace SafelyShare.Tests;
 [Category("Smoke")]
+[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+[Parallelizable(ParallelScope.All)]
 public class HomePageTests : BaseTest
 {
-
+    [SafelyShare.Tests.Tests.Retry(2)]
     [Test]
     public async Task HomePage_ShouldHaveCorrectUrlAndTitle()
     {
@@ -24,6 +26,7 @@ public class HomePageTests : BaseTest
                 @"Something new is coming.*SafelyShare",
                 System.Text.RegularExpressions.RegexOptions.IgnoreCase));
     }
+    [Category("Regression")]
     [Test]
     public async Task HomePage_ShouldDisplayComingSoonContent()
     {

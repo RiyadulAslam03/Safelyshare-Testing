@@ -44,3 +44,12 @@
 4. Ran all three Playwright tests successfully.
 5. Verified that the log file contains test names and Passed results.
 6. Final result: 3 tests passed, 0 failed. Build succeeded.
+
+## Additional work – 2026-11-08
+
+1. Configured parallel test execution using NUnit.
+2. Added a custom RetryAttribute to support automatic test retries.
+3. Updated HomePageTests to use the custom RetryAttribute.
+4. Tested and verified the retry functionality.
+5. Ran all three Playwright tests successfully.
+6. Final result: 3 tests passed, 0 failed. Build succeeded.

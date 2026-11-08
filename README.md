@@ -46,3 +46,15 @@ Screenshots and Playwright traces are saved in the test work directory under `ar
 ## Test Coverage
 
 The homepage tests verify the page URL, title, main content, contact information and language links.
+
+## Test Categories
+
+Smoke tests check the main functionality of the website.
+
+Regression tests check that existing functionality still works after changes.
+
+Run Smoke tests:
+dotnet test --settings test.runsettings --filter "TestCategory=Smoke"
+
+Run Regression tests:
+dotnet test --settings test.runsettings --filter "TestCategory=Regression"
