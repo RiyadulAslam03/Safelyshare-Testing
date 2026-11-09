@@ -1,4 +1,5 @@
 using Allure.NUnit;
+using Allure.Net.Commons.Attributes;
 using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
@@ -9,6 +10,8 @@ using SafelyShare.Tests.Base;
 
 namespace SafelyShare.Tests;
 [AllureNUnit]
+[AllureSuite("Homepage Tests")]
+[AllureFeature("Homepage")]
 [Category("Smoke")]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 [Parallelizable(ParallelScope.All)]

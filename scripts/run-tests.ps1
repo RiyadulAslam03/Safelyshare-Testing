@@ -1,10 +1,17 @@
 
+
 param(
     [ValidateSet("All", "Smoke", "Regression")]
     [string]$Category = "All",
 
+    [ValidateSet("chromium", "firefox", "webkit")]
+    [string]$Browser = "chromium",
+
+    [bool]$Headless = $true,
+
     [switch]$Report
 )
+
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
 
@@ -18,6 +25,12 @@ try {
     if ($Category -ne "All") {
         $testArgs += @("--filter", "TestCategory=$Category")
     }
+    
+        $testArgs += @(
+            "--",
+            "Playwright.BrowserName=$Browser",
+            "Playwright.LaunchOptions.Headless=$($Headless.ToString().ToLowerInvariant())"
+        )
 
     & dotnet @testArgs
     $testExitCode = $LASTEXITCODE

@@ -150,3 +150,26 @@
 2. Configured the schedule to run at 02:00 UTC.
 3. Added a GitHub Actions status badge to README.md.
 4. Updated the workflow and project documentation.
+
+## Additional work – 2026-11-09 (S-07.2)
+
+1. Added Allure Suite and Feature labels to HomePageTests.
+2. Grouped homepage tests under "Homepage Tests" and "Homepage".
+3. Ran the complete test suite successfully.
+4. Final result: 9 tests passed, 0 failed.
+
+## Additional work – 2026-11-09 (S-07.3)
+
+1. Updated the PowerShell test runner with Browser and Headless parameters.
+2. Verified Smoke tests using Chromium and Firefox.
+3. Tested both headless and headed browser execution.
+4. Confirmed that all 3 Smoke tests passed in each run.
+5. Final result: PowerShell test runner works successfully.
+
+## Additional work – 2026-11-09 (S-08.3)
+
+1. Created docs/assertions.md.
+2. Documented Playwright and NUnit assertions.
+3. Added examples from the homepage tests.
+4. Explained Assert.Multiple and mobile assertions.
+5. Completed the assertions documentation.
