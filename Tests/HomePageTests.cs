@@ -35,8 +35,7 @@ public class HomePageTests : BaseTest
         await homePage.OpenAsync();
 
         await Expect(homePage.ComingSoonHeading).ToBeVisibleAsync();
-        await Expect(homePage.StayTunedText).ToBeVisibleAsync();
-        await Expect(homePage.Logo).ToBeVisibleAsync();
+        await Expect(homePage.StayTunedText).ToBeVisibleAsync(); await Expect(homePage.Logo).ToBeVisibleAsync();
     }
     [Test]
     public async Task HomePage_ShouldDisplayContactAndLanguageLinks()

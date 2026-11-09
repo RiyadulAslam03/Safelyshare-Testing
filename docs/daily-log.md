@@ -66,5 +66,14 @@
 8. Verified that the report displays all three tests as passed.
 9. Updated README.md with instructions for running tests and viewing Allure reports.
 10. Final result: 3 tests passed, 0 failed.
+ ## Daily Log – 2026-11-10
+
+1. Added Allure attachments for failure screenshots and Playwright traces.
+2. Built the project successfully after the changes.
+3. Created a temporary test failure to verify error reporting.
+4. Confirmed that Allure displays the failure message, screenshot, and trace.
+5. Restored the original test assertion.
+6. Ran all three automated tests successfully.
+7. Final result: 3 tests passed, 0 failed. Build succeeded.
 
 

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Allure.Net.Commons;
+using NUnit.Framework;
 using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using SafelyShare.Tests.Config;
@@ -69,6 +70,10 @@ public class BaseTest : PageTest
                 });
 
                 TestContext.AddTestAttachment(screenshotPath);
+                AllureApi.AddAttachment(
+    "Failure Screenshot",
+    "image/png",
+    screenshotPath);
             }
         }
         finally
@@ -86,6 +91,11 @@ public class BaseTest : PageTest
             if (failed && File.Exists(tracePath))
             {
                 TestContext.AddTestAttachment(tracePath);
+                AllureApi.AddAttachment(
+    "Playwright Trace",
+    "application/zip",
+    tracePath);
+
             }
         }
     }
