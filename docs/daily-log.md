@@ -111,3 +111,20 @@
 3. Ran the complete test suite successfully.
 4. Final result: 7 tests passed, 0 failed. Build succeeded.
 
+## Additional work – 2026-11-09 (S-09.1)
+
+1. Installed Playwright Firefox and WebKit browsers.
+2. Executed automated tests using Chromium, Firefox, and WebKit.
+3. Verified that all 7 tests passed in each browser.
+4. No test failures were found.
+5. Final result: 7 passed, 0 failed per browser.
+
+## Additional work – 2026-11-09 (S-09.2)
+
+1. Created DeviceFactory.cs with mobile device settings.
+2. Added support for iPhone 13 and Pixel 5.
+3. Created MobilePageTests.cs with two mobile tests.
+4. Verified that both mobile tests passed.
+5. Ran the complete test suite successfully.
+6. Final result: 9 tests passed, 0 failed. Build succeeded.
+
