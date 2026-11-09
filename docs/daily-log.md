@@ -92,4 +92,17 @@
 12. Verified Regression tests: 1 passed, 0 failed.
 13. Confirmed that the PowerShell script runs successfully.
 
+## Additional work – 2026-11-09 (S-08.1 and S-08.2)
+
+1. Created TestData/homepage.json with homepage test data.
+2. Created TestDataLoader.cs to load JSON test data.
+3. Updated HomePageTests to validate text using JSON data.
+4. Verified that all 3 homepage tests passed.
+5. Created PlaywrightHelpers.cs with 4 reusable helper methods.
+6. Created PlaywrightHelpersTests.cs to test the helper methods.
+7. Ran all 4 helper tests successfully.
+8. Ran the complete test suite successfully.
+9. Final result: 7 tests passed, 0 failed. Build succeeded.
+
+
 
