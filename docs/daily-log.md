@@ -85,4 +85,11 @@
 6. Verified that the GitHub Actions workflow completed successfully.
 7. Final CI result: 3 tests passed, 0 failed.
 
+8. Created scripts/run-tests.ps1 to automate test execution.
+9. Added support for Smoke, Regression, and All test categories.
+10. Added an option to open Allure reports using PowerShell.
+11. Verified Smoke tests: 3 passed, 0 failed.
+12. Verified Regression tests: 1 passed, 0 failed.
+13. Confirmed that the PowerShell script runs successfully.
+
 

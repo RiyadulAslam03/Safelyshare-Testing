@@ -78,3 +78,32 @@ allure serve .\bin\Debug\net8.0\allure-results
 The report displays test results, execution time, test categories, and passed or failed tests.
 
 Allure CLI and Java 21 are required to view the report.
+
+
+## PowerShell Test Runner
+
+The project includes a PowerShell script for running automated tests.
+
+Run all tests:
+```powershell
+.\scripts\run-tests.ps1
+```
+
+Run Smoke tests:
+```powershell
+.\scripts\run-tests.ps1 -Category Smoke
+```
+
+Run Regression tests:
+```powershell
+.\scripts\run-tests.ps1 -Category Regression
+```
+
+Run tests and open the Allure report:
+```powershell
+.\scripts\run-tests.ps1 -Report
+```
+
+Verified results:
+- Smoke: 3 passed, 0 failed.
+- Regression: 1 passed, 0 failed.
