@@ -368,3 +368,7 @@ TestResults/
 bin/
 obj/
 test-error.txt
+
+# Allure generated reports
+allure-results/
+allure-report/

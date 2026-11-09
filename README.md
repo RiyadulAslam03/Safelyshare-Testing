@@ -58,3 +58,23 @@ dotnet test --settings test.runsettings --filter "TestCategory=Smoke"
 
 Run Regression tests:
 dotnet test --settings test.runsettings --filter "TestCategory=Regression"
+
+## Allure Reporting
+
+The project uses Allure NUnit to generate test reports.
+
+Run the automated tests:
+
+```powershell
+dotnet test --settings test.runsettings
+```
+
+Open the Allure report:
+
+```powershell
+allure serve .\bin\Debug\net8.0\allure-results
+```
+
+The report displays test results, execution time, test categories, and passed or failed tests.
+
+Allure CLI and Java 21 are required to view the report.

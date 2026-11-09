@@ -53,3 +53,18 @@
 4. Tested and verified the retry functionality.
 5. Ran all three Playwright tests successfully.
 6. Final result: 3 tests passed, 0 failed. Build succeeded.
+
+## Daily Log – 2026-11-09
+
+1. Installed Allure.NUnit 2.15.0 for automated test reporting.
+2. Created and configured allureConfig.json.
+3. Added AllureNUnit attribute to HomePageTests.
+4. Successfully built the project after the changes.
+5. Executed all three Playwright tests successfully.
+6. Installed Allure CLI and Java 21.
+7. Generated and opened the Allure HTML report.
+8. Verified that the report displays all three tests as passed.
+9. Updated README.md with instructions for running tests and viewing Allure reports.
+10. Final result: 3 tests passed, 0 failed.
+
+

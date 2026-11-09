@@ -1,4 +1,4 @@
-
+using Allure.NUnit;
 using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
@@ -8,6 +8,7 @@ using SafelyShare.Tests.Base;
 [assembly: LevelOfParallelism(2)]
 
 namespace SafelyShare.Tests;
+[AllureNUnit]
 [Category("Smoke")]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 [Parallelizable(ParallelScope.All)]
