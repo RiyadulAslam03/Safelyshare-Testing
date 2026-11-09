@@ -45,11 +45,21 @@ public class HomePageTests : BaseTest
         var homePage = new HomePage(Page);
         await homePage.OpenAsync();
 
-        await Expect(homePage.SupportEmail).ToBeVisibleAsync();
-        await Expect(homePage.EnglishLink).ToBeVisibleAsync();
-        await Expect(homePage.SwedishLink).ToBeVisibleAsync();
-        await Expect(homePage.VeyroTechLink).ToBeVisibleAsync();
+
+        var emailVisible = await homePage.SupportEmail.IsVisibleAsync();
+        var englishVisible = await homePage.EnglishLink.IsVisibleAsync();
+        var swedishVisible = await homePage.SwedishLink.IsVisibleAsync();
+        var veyroVisible = await homePage.VeyroTechLink.IsVisibleAsync();
+
+        Assert.Multiple(() =>
+        {
+            Assert.That(emailVisible, Is.True, "Support email is missing");
+            Assert.That(englishVisible, Is.True, "English link is missing");
+            Assert.That(swedishVisible, Is.True, "Swedish link is missing");
+            Assert.That(veyroVisible, Is.True, "VeyroTech link is missing");
+        });
+
     }
-   
+
 }    
 

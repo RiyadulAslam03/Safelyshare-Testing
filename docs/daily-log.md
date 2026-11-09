@@ -103,6 +103,11 @@
 7. Ran all 4 helper tests successfully.
 8. Ran the complete test suite successfully.
 9. Final result: 7 tests passed, 0 failed. Build succeeded.
+ 
+## Additional work – 2026-11-09 (S-08.3)
 
-
+1. Added NUnit Assert.Multiple to the homepage tests.
+2. Added grouped assertions for support email and language links.
+3. Ran the complete test suite successfully.
+4. Final result: 7 tests passed, 0 failed. Build succeeded.
 
