@@ -75,5 +75,14 @@
 5. Restored the original test assertion.
 6. Ran all three automated tests successfully.
 7. Final result: 3 tests passed, 0 failed. Build succeeded.
+## Additional work – 2026-11-09
+
+1. Created a GitHub Actions workflow in .github/workflows/playwright.yml.
+2. Configured automatic execution on pushes and pull requests.
+3. Added steps to restore, build, and install Playwright Chromium.
+4. Configured automatic Smoke test execution.
+5. Committed and pushed the workflow to my GitHub feature branch.
+6. Verified that the GitHub Actions workflow completed successfully.
+7. Final CI result: 3 tests passed, 0 failed.
 
 
