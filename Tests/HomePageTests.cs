@@ -34,8 +34,10 @@ public class HomePageTests : BaseTest
         var homePage = new HomePage(Page);
         await homePage.OpenAsync();
 
+        var testData = SafelyShare.Tests.Config.TestDataLoader.LoadHomePage();
+
         await Expect(homePage.ComingSoonHeading).ToBeVisibleAsync();
-        await Expect(homePage.StayTunedText).ToBeVisibleAsync(); await Expect(homePage.Logo).ToBeVisibleAsync();
+        await Expect(homePage.StayTunedText).ToHaveTextAsync(testData.ExpectedEnglishText);
     }
     [Test]
     public async Task HomePage_ShouldDisplayContactAndLanguageLinks()
