@@ -128,3 +128,11 @@
 5. Ran the complete test suite successfully.
 6. Final result: 9 tests passed, 0 failed. Build succeeded.
 
+## Additional work – 2026-11-09 (S-09.3)
+
+1. Created docs/browser-notes.md.
+2. Documented test results for Chromium, Firefox, and WebKit.
+3. Verified that all 7 tests passed in each browser.
+4. Documented mobile testing for iPhone 13 and Pixel 5.
+5. No browser-specific failures were observed.
+
