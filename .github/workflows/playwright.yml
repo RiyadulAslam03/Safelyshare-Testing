@@ -6,7 +6,11 @@ on:
     branches: [feature/shukri-framework]
   pull_request:
     branches: [main]
+ 
   workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'
+
 
 permissions:
   contents: read

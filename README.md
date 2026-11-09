@@ -1,4 +1,6 @@
 
+[![Playwright Tests](https://github.com/RiyadulAslam03/Safelyshare-Testing/actions/workflows/playwright.yml/badge.svg?branch=feature%2Fshukri-framework)](https://github.com/RiyadulAslam03/Safelyshare-Testing/actions/workflows/playwright.yml)
+
 # Safelyshare-Testing
 
 Automated testing framework for SafelyShare using C#, .NET, NUnit and Playwright.

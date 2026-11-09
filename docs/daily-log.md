@@ -136,3 +136,17 @@
 4. Documented mobile testing for iPhone 13 and Pixel 5.
 5. No browser-specific failures were observed.
 
+## Additional work – 2026-11-09 (S-10.2)
+
+1. Updated the GitHub Actions workflow to upload test artifacts.
+2. Configured artifact upload to run even if tests fail.
+3. Committed and pushed the workflow changes to GitHub.
+4. Verified that the GitHub Actions workflow passed.
+5. Confirmed that playwright-test-results was uploaded successfully.
+
+## Additional work – 2026-11-09 (S-10.3)
+
+1. Added a nightly test schedule to GitHub Actions.
+2. Configured the schedule to run at 02:00 UTC.
+3. Added a GitHub Actions status badge to README.md.
+4. Updated the workflow and project documentation.
