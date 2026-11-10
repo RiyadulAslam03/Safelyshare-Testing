@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+	<RunConfiguration>
+		<EnvironmentVariables>
+			<TestSettings__BaseUrl>https://safelyshare.se/</TestSettings__BaseUrl>
+		</EnvironmentVariables>
+	</RunConfiguration>
+	<Playwright>
+		<BrowserName>chromium</BrowserName>
+	</Playwright>
+</RunSettings>
